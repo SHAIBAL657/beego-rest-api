@@ -2,6 +2,7 @@ package models
 
 import (
 	"database/sql"
+	"errors"
 	"fmt"
 	"regexp"
 
@@ -83,3 +84,18 @@ func HashPassword(password string) (string, error) {
 //     err := bcrypt.CompareHashAndPassword([]byte(hash), []byte(password))
 //     return err == nil
 // }
+
+func GetOne(ObjectId string) (object *Object, err error) {
+	if v, ok := Objects[ObjectId]; ok {
+		return v, nil
+	}
+	return nil, errors.New("ObjectId Not Exist")
+}
+
+func GetAll() map[string]*Object {
+	return Objects
+}
+
+func Delete(ObjectId string) {
+	delete(Objects, ObjectId)
+}

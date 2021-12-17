@@ -35,7 +35,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "{string} models.Object.Id"
+                        "description": "{string} models.Object"
                     },
                     "403": {
                         "description": "body is empty"
