@@ -69,7 +69,7 @@ func AddOne(object Object) (ObjectId string) {
 	} else {
 		return "Invalid Inputs"
 	}
-	return "Succesfully created user."
+	return "Successfully created user."
 }
 func CheckError(err error) {
 	if err != nil {
