@@ -60,7 +60,7 @@ func AddOne(object Object) (ObjectId string) {
 
 	// dynamic
 	if email && date && phone {
-		insertDynStmt := `insert into "USER"("firstname", "lastname", "phone", "email", "password", "dob") values($1, $2, $3, $4, $5, $6)`
+		insertDynStmt := `insert into "user"("firstname", "lastname", "phone", "email", "password", "dob") values($1, $2, $3, $4, $5, $6)`
 		_, e := db.Exec(insertDynStmt, object.FirstName, object.LastName, object.Phone, object.Email, hash, object.DoB)
 		if e != nil {
 			return "Choose another email"
