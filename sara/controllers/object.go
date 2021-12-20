@@ -22,7 +22,7 @@ func (o *ObjectController) Post() {
 	var ob models.Object
 	json.Unmarshal(o.Ctx.Input.RequestBody, &ob)
 	objectemail := models.AddOne(ob)
-	o.Data["json"] = map[string]string{"Email": objectemail}
+	o.Data["json"] = map[string]string{"API": objectemail}
 	o.ServeJSON()
 
 }
