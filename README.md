@@ -19,3 +19,18 @@
     ~ Valid email,phone,date should be entered.
     ~ Validate data before sending to database.
     ~ Password stored as hase value.
+
+### Create DATABASE postgresql (PGADMIN)
+
+    createdb:=CREATE TABLE IF NOT EXISTS public."USER"
+    (
+    firstname character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    lastname character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    phone character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    password character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    email character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    dob character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT "USER_pkey" PRIMARY KEY (email)
+    )
+    
+    db.Exec(createdb)
